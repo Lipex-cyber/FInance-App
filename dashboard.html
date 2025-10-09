@@ -92,5 +92,41 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+    <script>
+    function openUserModal() {
+    document.getElementById("userModal").style.display = "flex";
+    }
+
+    function closeUserModal() {
+    document.getElementById("userModal").style.display = "none";
+    }
+
+    document.addEventListener('click', function(event) {
+    const modal = document.getElementById('userModal');
+    const content = document.querySelector('.user-modal-content');
+    const isUserButton = event.target.closest('.btn-menu');
+
+    if (modal.style.display === 'flex' && !content.contains(event.target) && !isUserButton) {
+        modal.style.display = 'none';
+    }
+    });
+    </script>
+    
 </body>
+
+<div id="userModal" class="user-modal">
+  <div class="user-modal-content">
+    <h5 class="user-title">👤 Usuário</h5>
+    <hr>
+    <div class="user-info">
+      <p><strong>NOME</strong><br>Nome do Usuário <br><a href="#">Alterar nome</a></p>
+      <p><strong>E-MAIL</strong><br>seu@xemplo.com <br><a href="#">Alterar e-mail</a></p>
+      <p><strong>TELEFONE</strong><br>(00) 00000-0000 <br><a href="#">Alterar telefone</a></p>
+      <p><strong>IDIOMA</strong><br>Português (Brasil) <br><a href="#">Alterar idioma</a></p>
+      <p><strong>CONTA</strong><br><a href="#" class="text-danger">Excluir conta</a></p>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="closeUserModal()">Fechar</button>
+  </div>
+</div>
 </html>
