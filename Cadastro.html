@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Finance App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #dbeafe, #f1f5f9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #f1f5f9;
+    }
+
+    button {
+      background: #1e40af;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Crie sua conta</h2>
+
+    <form action="TelaLogin.html" method="get">
+      <label for="nome">Nome completo</label>
+      <input id="nome" type="text" name="nome" placeholder="Seu nome completo" required>
+
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input id="dataNascimento" type="date" name="dataNascimento" required>
+
+      <label for="email">E-mail</label>
+      <input id="email" type="email" name="email" placeholder="seu@exemplo.com" required>
+
+      <label for="telefone">Telefone</label>
+      <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" name="senha" placeholder="********" required>
+
+      <label for="idioma">Idioma</label>
+      <select id="idioma" name="idioma" required>
+        <option value="">Selecione um idioma</option>
+        <option value="pt-BR">Português (Brasil)</option>
+        <option value="en-US">English (USA)</option>
+        <option value="es-ES">Español (España)</option>
+      </select>
+
+      <label for="freelance">Tipo de freelance que atua:</label>
+      <select id="freelance" name="freelance" required>
+        <option value="">Selecione sua área</option>
+        <option value="ti">Tecnologia da Informação (TI) e Programação</option>
+        <option value="marketing">Marketing Digital</option>
+        <option value="designer">Design Gráfico e UX/UI</option>
+        <option value="writer">Redação e Tradução</option>
+        <option value="edit">Edição de Vídeo</option>
+      </select>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <a href="TelaLogin.html">← Voltar para o login</a>
+  </div>
+</body>
+</html>
