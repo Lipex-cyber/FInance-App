@@ -2,8 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
-html{
+html, body{
     font-family: 'Josefin Sans', sans-serif;
+    background-color: #ffffff;
 }
 
 
@@ -200,4 +201,42 @@ html{
 
 .text-danger {
   color: red;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.chart-card {
+    margin: auto;
+}
+
+.barChart {
+    background-color: #0353a41a;
+    border-radius: 20px;
+    width: 700px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 380px;
+
+}
+
+canvas #barChart {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.pieChart {
+    background-color: #0353a41a;
+    border-radius: 20px;
+    width: 700px;
+    height: 380px;
+    align-items: center !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
