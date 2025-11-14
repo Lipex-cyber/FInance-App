@@ -146,6 +146,16 @@
             <button class="btn btn-secondary mt-3" onclick="closeUserModal()">Fechar</button>
         </div>
     </div>
-    
+    <div id="chat-root"></div>
+    <script>
+    fetch('chatbot.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('chat-root').innerHTML = html; })
+        .then(() => {
+            const script = document.createElement('script');
+            script.src = 'js/chatbot.js';
+            document.body.appendChild(script);
+        });
+    </script>
 </body>
 </html>
