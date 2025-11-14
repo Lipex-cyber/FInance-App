@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/adicionar.css">
+</head>
+<body>
+
+    <button class="btn btn-primary btn-menu-h" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header gap-4">
+                <img src="images/Logo de Aplicativo Financeiro Freelance.png" alt="Logo do app de finanças">
+                <div class="menu-title">
+                    <h3>FREELANCER</h3>
+                    <p>seu app de finanças</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="menu-options d-grid gap-3">
+                    <button type="button" class="btn btn-primary btn-lg btn-menu" onclick="location.href='dashboard.html'">
+                        <i class="bi bi-columns-gap"></i>
+                        Dashboard</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-menu">
+                        <i class="bi bi-calendar-week"></i>
+                        Calendário</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-menu" onclick="openUserModal()">
+                        <i class="bi bi-person"></i>
+                        Usuário</button>
+                </div>
+                <div class="icon-config"><i class="bi bi-gear"></i></div>
+            </div>
+        </div>
+
+
+        <main id="principal" class="adicionar-transacoes">
+
+            <section id="cards" class="add">
+                <div class="content-area">
+                    <div class="title-transacoes">
+                        <h1>ADICIONAR TRANSAÇÕES</h1>
+                        <p>Registre suas receitas e despesas para manter o controle financeiro</p>
+                    </div>
+
+                    <div class="transacao-container">
+                        <form id="receita-form" action="">
+                            <div class="transacao-card">
+                                <div class="title-transacao">
+                                    <h3>
+                                        <i class="bi bi-currency-dollar icon-title-rec"></i>
+                                        Nova Receita
+                                    </h3>
+                                    <p>Registre novas receitas</p>
+                                </div>
+                                <div class="add-row">
+                                    <label for="descricao">Descrição</label><br>
+                                    <input type="text" placeholder="Ex: Pagamento de Projeto" required>
+                                </div>
+                                <div class="add-row">
+                                    <label for="categoria">Categoria</label><br>
+                                    <select name="categoria" id="categoria" required>
+                                        default<option value="" disabled selected>Selecione uma categoria</option>
+                                        <option value="Freelance">Freelance</option>
+                                        <option value="Salário">Salário</option>
+                                        <option value="Investimento">Investimento</option>
+                                    </select>
+                                </div>
+                                <div class=" row add-row">
+                                    <div class="col">
+                                        <label for="valor">Valor</label><br>
+                                        <input type="number" name="valor" id="valor" placeholder="R$0,00" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="data">Data</label><br>
+                                        <input type="date" name="data" id="data" required>
+                                    </div>
+                                </div>
+                                <div class="add-row">
+                                    <label for="carteira">Carteira</label><br>
+                                    <select name="carteira" id="carteira" required>
+                                        default <option value="" disabled selected>Selecione a Carteira</option>
+                                        <option value="pessoal">Pessoal</option>
+                                        <option value="profissional">Profissional</option>
+                                    </select>
+                                </div>
+                                <button type="submit" id="add-receita-btn" class="btn-add">ADICIONAR RECEITA</button>
+                            </div>
+                        </form>
+
+
+                        <form id="despesa-form" action="">
+                            <div class="transacao-card">
+                                <div class="title-transacao">
+                                    <h3>
+                                        <i class="bi bi-currency-dollar icon-title-desp"></i>
+                                        Nova Despesa
+                                    </h3>
+                                    <p>Registre novas despesas</p>
+                                </div>
+                                <div class="add-row">
+                                    <label for="descricao">Descrição</label><br>
+                                    <input type="text" placeholder="Ex: Pagamento de Projeto" required>
+                                </div>
+                                <div class="add-row">
+                                    <label for="categoria">Categoria</label><br>
+                                    <select name="categoria" id="categoria" required>
+                                        default<option value="" disabled selected>Selecione uma categoria</option>
+                                        <option value="alimentação">Alimentação</option>
+                                        <option value="transporte">Transporte</option>
+                                        <option value="moradia">Moradia</option>
+                                    </select>
+                                </div>
+                                <div class="row add-row">
+                                    <div class="col">
+                                        <label for="valor">Valor</label><br>
+                                        <input type="number" name="valor" id="valor" placeholder="R$0,00" required>
+                                    </div>
+                                    <div class="col">
+                                        <label for="data">Data</label><br>
+                                        <input type="date" name="data" id="data" required>
+                                    </div>
+                                </div>
+                                <div class="add-row">
+                                    <label for="carteira">Carteira</label><br>
+                                    <select name="carteira" id="carteira" required>
+                                        default <option value="" disabled selected>Selecione a Carteira</option>
+                                        <option value="pessoal">Pessoal</option>
+                                        <option value="profissional">Profissional</option>
+                                    </select>
+                                </div>
+                                <button type="submit" id="add-despesa-btn" class="btn-add">ADICIONAR DESPESA</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="modal fade" id="receitaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header-receita">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Nova Receita adicionada com sucesso!</h1>
+                    </div>
+                    <div class="modal-body">
+                        <i class="bi bi-check2-circle modal-receita"></i>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="despesaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header-despesa">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Nova Despesa adicionada com sucesso!</h1>
+                    </div>
+                    <div class="modal-body">
+                        <i class="bi bi-check2-circle modal-despesa"></i>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="refreshPage()">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/barChart.js"></script>
+    <script src="js/pieChart.js"></script>
+    <script src="js/userModal.js"></script>
+
+    <script>
+        function refreshPage() {
+        window.location.reload();
+        }
+    </script>
+
+    <script>
+        (function() {
+            function handleFormSubmit(formId, modalId, event) {
+                var form = document.getElementById(formId);
+                if (!form) return;
+                event.preventDefault();
+                if (form.checkValidity()) {
+                    var modalEl = document.getElementById(modalId);
+                    if (modalEl && typeof bootstrap !== 'undefined') {
+                        var modal = new bootstrap.Modal(modalEl);
+                        modal.show();
+                    }
+                } else {
+                    form.reportValidity();
+                }
+            }
+
+            var receitaForm = document.getElementById('receita-form');
+            if (receitaForm) {
+                receitaForm.addEventListener('submit', function(e) {
+                    handleFormSubmit('receita-form', 'receitaModal', e);
+                });
+            }
+
+            var despesaForm = document.getElementById('despesa-form');
+            if (despesaForm) {
+                despesaForm.addEventListener('submit', function(e) {
+                    handleFormSubmit('despesa-form', 'despesaModal', e);
+                });
+            }
+        })();
+    </script>
+
+    <div id="userModal" class="user-modal">
+        <div class="user-modal-content">
+            <h5 class="user-title">👤 Usuário</h5>
+            <hr>
+            <div class="user-info">
+                <p><strong>NOME</strong><br>Nome do Usuário <br><a href="#">Alterar nome</a></p>
+                <p><strong>E-MAIL</strong><br>seu@xemplo.com <br><a href="#">Alterar e-mail</a></p>
+                <p><strong>TELEFONE</strong><br>(00) 00000-0000 <br><a href="#">Alterar telefone</a></p>
+                <p><strong>IDIOMA</strong><br>Português (Brasil) <br><a href="#">Alterar idioma</a></p>
+                <p><strong>CONTA</strong><br><a href="#" class="text-danger">Excluir conta</a></p>
+            </div>
+            <button class="btn btn-secondary mt-3" onclick="closeUserModal()">Fechar</button>
+        </div>
+    </div>
+    
+</body>
+</html>

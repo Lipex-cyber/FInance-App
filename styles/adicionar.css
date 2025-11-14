@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+html, body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #fff9f4;
+}
+
+
+.btn-menu-h{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1030;
+    border-radius: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: #0353A4 ;
+    visibility: 10%;
+    border: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-menu-h:hover {
+    background-color: #0353A4;
+}
+
+.bi-list{
+    font-size: 30px !important;
+}
+
+.offcanvas-start{
+    background-color: #0353A4!important;
+    color: #fff;
+    box-shadow: 5px 0 4px 0 #0000001e;
+}
+
+.offcanvas-start img{
+    width: 100px;
+    border-radius: 20px;
+}
+
+.btn-menu{
+    border-radius: 20px;
+    height: 72px;
+    background-color: #02478d9f ;
+    visibility: 10%;
+    border: none;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.btn-menu:hover{
+    background-color: #02478d;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.icon-config{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.user-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.user-modal-content {
+  background: #fff;
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.user-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.user-info a {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.title-transacoes{
+    margin-top: 30px;
+}
+
+.title-transacoes h1 {
+    color: #000;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.title-transacoes p {
+    font-weight: bold;
+    color: #0000007e;
+    margin: 0   ;
+}
+
+.content-area {
+  width: 1287px; 
+  margin: 0 auto; 
+}
+
+.transacao-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.transacao-card {
+    background-color: #0353a41a;
+    width: 600px;
+    padding: 20px;
+    border-radius: 20px;    
+}
+
+.transacao-card h3{
+    color: #000;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.transacao-card p {
+    font-weight: bold;
+    color: #0000007e;
+    margin: 0   ;
+}
+
+.title-transacao {
+    margin-bottom: 30px;
+}
+
+.add-row {
+    margin-bottom: 20px;
+}
+
+.add-row input, .add-row select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+
+
+.btn-add {
+    background-color: #006DAA;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+}
+
+.icon-title-rec, .modal-receita {
+    color: #27863E;
+}
+
+.icon-title-desp, .modal-despesa {
+    color: #EE2C2C;
+}
+
+
+.modal-header-despesa {
+    background-color: #EE2C2C;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 5px 5px 0 0;
+}
+
+.modal-header-receita {
+    background-color: #27863E;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 5px 5px 0 0;
+}
+
+.btn-secondary {
+    background-color: #006DAA;
+    border: none;
+    margin: auto;
+}
+
+.btn-secondary:hover {
+    background-color: #006caace;
+    border: none;
+    margin: auto;
+}
+
+.modal-body {
+    text-align: center;
+    font-size: 56px;
+}
