@@ -108,17 +108,17 @@ html, body{
   cursor: pointer;
 }
 
-.title-transacoes{
+.title-calendario{
     margin-top: 30px;
 }
 
-.title-transacoes h1 {
+.title-calendario h1 {
     color: #000;
     font-weight: bolder;
     margin-bottom: 0;
 }
 
-.title-transacoes p {
+.title-calendario p {
     font-weight: bold;
     color: #0000007e;
     margin: 0   ;
@@ -129,122 +129,137 @@ html, body{
   margin: 0 auto; 
 }
 
-.transacao-container {
+.container {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
 }
 
-.transacao-card {
+.container-filho {
+    margin-top: 100px;
     background-color: #0353a41a;
-    width: 600px;
-    padding: 20px;
-    border-radius: 20px;    
+    border-radius: 20px;
+    padding: 30px;
 }
 
-.transacao-card h3{
+.container-filho h3 {
     color: #000;
     font-weight: bolder;
-    margin-bottom: 0;
+    margin-bottom: 0; 
 }
 
-.transacao-card p {
+.container-filho p {
     font-weight: bold;
     color: #0000007e;
     margin: 0   ;
 }
 
-.title-transacao {
-    margin-bottom: 30px;
+
+#calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  gap: 10px;
+  justify-content: left;
 }
 
-.add-row {
-    margin-bottom: 20px;
+.dia {
+  width: 60px;      
+  height: 60px;   
+  line-height: 60px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.add-row input, .add-row select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+.dia:hover {
+  transform: scale(1.1);
 }
 
+.receita {
+  background: #3cb371;
+  color: white;
+}
 
+.despesa {
+  background: #e74c3c;
+  color: white;
+}
 
-.btn-add {
-    background-color: #006DAA;
-    border: none;
+.info {
+    background-color: #B9D6F2;
+    color: #000;
+    padding: 15px;
     border-radius: 20px;
-    padding: 10px;
-    width: 100%;
-    color: #fff;
+    margin-top: 50px;
+}
+
+.valor {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.text-desc {
+    color: #000 !important;
+    margin: 0;
+    font-weight: normal !important;
+}
+
+.title-desc {
+    margin: 0 !important;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.bi-arrow-down-left {
+    color: #e74c3c;
+}
+
+.historico {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    background-color: #0353a41a;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.list .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list .registro .col {
+    flex: 1;
+}
+
+.list .registro .col:last-child {
+    text-align: right;
+}
+
+.rec {
+    color: #3cb371 !important;
     font-weight: bold;
 }
 
-.icon-title-rec, .modal-receita {
-    color: #27863E;
-}
-
-.icon-title-desp, .modal-despesa {
-    color: #EE2C2C;
-}
-
-
-.modal-header-despesa {
-    background-color: #EE2C2C;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-    font-weight: bolder;
-    border-radius: 5px 5px 0 0;
-}
-
-.modal-header-receita {
-    background-color: #27863E;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-    font-weight: bolder;
-    border-radius: 5px 5px 0 0;
-}
-
-.btn-secondary {
-    background-color: #006DAA;
-    border: none;
-    margin: auto;
-}
-
-.btn-secondary:hover {
-    background-color: #006caace;
-    border: none;
-    margin: auto;
-}
-
-.modal-body {
-    text-align: center;
-    font-size: 56px;
-}
-
-.registro {
-    display: flex !important;
-    justify-content: space-between !important;
-}
-
-.text-name {
-    font-size: 10px;
-    margin: 0 !important;
-}
-
-.list .text-date {
-    color: #0000007e !important;
-}
-
-
-.rec {
-    color: #27863E;
-}
-
 .desp {
-    color: #EE2C2C !important;
+    color: #e74c3c !important;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+}
+
+.title-lancamento {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: #000;
 }
