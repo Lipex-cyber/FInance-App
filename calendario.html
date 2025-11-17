@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/calendario.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
 </head>
 <body>
     
@@ -243,5 +244,17 @@
             <button class="btn btn-secondary mt-3" onclick="closeUserModal()">Fechar</button>
         </div>
     </div>
+
+    <div id="chat-root"></div>
+    <script>
+    fetch('chatbot.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('chat-root').innerHTML = html; })
+        .then(() => {
+            const script = document.createElement('script');
+            script.src = 'js/chatbot.js';
+            document.body.appendChild(script);
+        });
+    </script>
 </body>
 </html>

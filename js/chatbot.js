@@ -5,8 +5,12 @@ const chatBody = document.getElementById('chat-body');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
 
-chatToggle.addEventListener('click', () => { chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex'; });
-chatClose.addEventListener('click', () => { chatBox.style.display = 'none'; });
+chatToggle.addEventListener('click', () => { 
+  chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex'; 
+});
+chatClose.addEventListener('click', () => { 
+  chatBox.style.display = 'none'; 
+});
 
 sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });

@@ -110,19 +110,20 @@ html, body{
 }
 
 .title-calendario{
-    margin-top: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .title-calendario h1 {
     color: #000;
     font-weight: bolder;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .title-calendario p {
     font-weight: bold;
     color: #0000007e;
-    margin: 0   ;
+    margin: 0;
 }
 
 .content-area {
@@ -141,10 +142,13 @@ html, body{
 }
 
 .container-filho {
-    margin-top: 100px;
+    margin-top: 0;
     background-color: #0353a41a;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 2px 2px 4px #00000038;
+    flex: 1 1 300px;
+    min-width: 250px;
 }
 
 .container-filho h3 {
@@ -227,11 +231,12 @@ html, body{
 }
 
 .historico {
-    margin-top: 100px;
+    margin-top: 40px;
     margin-bottom: 20px;
     background-color: #0353a41a;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 2px 2px 4px #00000038;
 }
 
 .list .row {
@@ -279,4 +284,17 @@ html, body{
 
 a {
     color: #000;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .content-area {
+        padding-top: 96px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-area {
+        padding-top: 96px;
+    }
 }
