@@ -5,6 +5,7 @@
 html, body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #fff9f4;
+    overflow-x: hidden;
 }
 
 
@@ -125,21 +126,29 @@ html, body{
 }
 
 .content-area {
-  width: 1287px; 
-  margin: 0 auto; 
+    width: calc(100% - 40px);
+    max-width: 1287px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .transacao-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .transacao-card {
     background-color: #0353a41a;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     padding: 20px;
-    border-radius: 20px;    
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .transacao-card h3{
@@ -247,4 +256,11 @@ html, body{
 
 .desp {
     color: #EE2C2C !important;
+}
+
+@media (max-width: 768px) {
+    .content-area { width: calc(100% - 24px); padding: 16px 12px 112px 12px; padding-top: 96px; }
+    .transacao-container { margin-top: 20px; gap: 12px; }
+    .transacao-card { padding: 12px; }
+    .modal-body { font-size: 40px; }
 }

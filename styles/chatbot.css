@@ -87,3 +87,7 @@ overflow-y: auto;
 #chat-toggle img {width: 48px; height: 48px; filter: invert(1);}
 #chat-toggle:hover { transform: scale(1.05); background-color: #0056b3;}
 @media (max-width:480px) { .chat-container { width: 90%; right: 5%; } }
+@media (max-width:360px) { 
+  .chat-container { width: 92%; right: 4%; bottom: 80px; height: 56vh; }
+  .chat-header h3 { font-size: 16px; }
+}

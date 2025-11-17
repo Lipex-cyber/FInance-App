@@ -5,6 +5,7 @@
 html, body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #fff9f4;
+    overflow-x: hidden;
 }
 
 
@@ -83,27 +84,37 @@ html, body{
 }
 
 .content-area {
-  width: 1287px; 
-  margin: 0 auto; 
+    width: calc(100% - 40px);
+    max-width: 1287px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    justify-content: center !important;
+    justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 32px;
     margin-top: 20px;
     background-color: #0353a41a;
-    height: 340px;
-    width: 1287px;
+    height: auto;
+    width: 100%;
+    max-width: 1287px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 2px 2px 4px #00000038;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .card-insight {
-    margin: 40px !important;
-    height: 250px;
+    margin: 16px;
     border: none;
+    box-sizing: border-box;
+    flex: 0 1 calc(33.333% - 48px);
+    max-width: calc(33.333% - 48px);
+    height: 250px;
 }
 
 .card-body {
@@ -149,10 +160,11 @@ html, body{
 .btn-card-dashboard {
     background-color: #006DAA;
     border: none;
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
-    left: 50px;
+    position: static;
+    margin: 16px auto 0 auto;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 .btn-card-dashboard:hover {
@@ -209,22 +221,33 @@ html, body{
 .charts {
     display: flex;
     justify-content: space-between;
-    margin: 50px;
+    gap: 32px;
+    margin: 50px auto;
+    width: calc(100% - 40px);
+    max-width: 1287px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
 }
 
 .chart-card {
     margin: auto;
+    flex: 1 1 320px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
 }
 
 .barChart {
     background-color: #0353a41a;
     border-radius: 20px;
-    width: 700px;
+    width: 100%;
     display: flex;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 380px;
-
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 canvas #barChart {
@@ -236,25 +259,26 @@ canvas #barChart {
 .pieChart {
     background-color: #0353a41a;
     border-radius: 20px;
-    width: 700px;
-    height: 380px;
-    align-items: center !important;
+    width: 100%;
+    align-items: center;
     text-align: center;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .div-btn-container {
-    background-color: #0353a41a;
+    background-color: transparent;
     border-radius: 20px;
-    width: 434px;
-    height: 70px;
-    padding: 50px;
+    width: 100%;
+    max-width: 434px;
+    height: auto;
+    padding: 16px;
     display: flex;
     justify-content: space-around;
-    margin-left: 150px;
-    margin-bottom: 25px;
+    margin: 0 auto 25px auto;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .btn-add-mov {
@@ -274,4 +298,126 @@ canvas #barChart {
     border: none;
     transition: 0.5s;
     transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+    .content-area {
+        width: calc(100% - 24px);
+        padding: 16px 12px 112px 12px;
+        padding-top: 96px; /* espaço para o menu fixo em telas pequenas */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 16px;
+        background-color: #0353a41a;
+        height: auto;
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 2px 2px 4px #00000038;
+        padding: 12px;
+    }
+
+    .card-insight {
+        margin: 12px !important;
+        height: auto;
+        width: 100%;
+    }
+
+    .card-body {
+        border: none;
+        border-radius: 10px;
+        background-color: #b9d6f2b4;
+        box-shadow: 2px 2px 4px #00000038;
+    }
+
+    .card-title-icon i {
+        position: absolute;
+        right: 16px;
+    }
+
+    .card-value {
+        margin-top: 16px !important;
+        margin-bottom: auto !important;
+        align-items: center !important;
+        font-weight: bolder;
+        margin: 0;
+    }
+
+    /* gráficos */
+    .charts {
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        margin: 24px auto;
+    }
+
+    .chart-card {
+        margin: auto;
+        width: 100%;
+    }
+
+}
+/* For tablet screens: place charts two-per-row and set consistent heights */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .charts {
+        gap: 24px;
+        justify-content: center;
+    }
+    .chart-card {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+    .barChart, .pieChart {
+        height: 340px;
+    }
+}
+
+/* For medium screens: stack cards in single column to avoid mixed 2+1 layout */
+@media (max-width: 1023px) {
+    .card-insight {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin: 12px 0 !important;
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: nowrap;
+    }
+    .card-insight {
+        /* force 3 in a row on wide screens */
+        flex: 0 0 calc(33.333% - 48px);
+        max-width: calc(33.333% - 48px);
+    }
+
+    /* Desktop: two charts side-by-side, equal heights */
+    .charts { align-items: stretch; }
+    .chart-card { flex: 1 1 45%; max-width: 700px; }
+    .barChart, .pieChart { height: 380px; padding: 12px 8px; }
+
+    .div-btn-container {
+        max-width: 100%;
+        padding: 12px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-add-mov { padding: 12px 14px; }
+
 }

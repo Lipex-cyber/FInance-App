@@ -5,6 +5,7 @@
 html, body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: #fff9f4;
+    overflow-x: hidden;
 }
 
 
@@ -125,13 +126,18 @@ html, body{
 }
 
 .content-area {
-  width: 1287px; 
-  margin: 0 auto; 
+    width: calc(100% - 40px);
+    max-width: 1287px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .container-filho {
@@ -155,21 +161,25 @@ html, body{
 
 
 #calendario-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 60px);
-  gap: 10px;
-  justify-content: left;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+    gap: 10px;
+    justify-content: left;
 }
 
 .dia {
-  width: 60px;      
-  height: 60px;   
-  line-height: 60px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.2s;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .dia:hover {
@@ -250,6 +260,13 @@ html, body{
 
 .row {
     display: flex;
+}
+
+@media (max-width: 768px) {
+    .content-area { width: calc(100% - 24px); padding: 16px 12px 112px 12px; padding-top: 96px; }
+    #calendario-grid { grid-template-columns: repeat(7, minmax(30px, 1fr)); gap: 6px; }
+    .dia { width: auto; height: auto; padding: 8px; font-size: 14px; border-radius: 8px; }
+    .container-filho { margin-top: 20px; padding: 16px; }
 }
 
 .title-lancamento {
